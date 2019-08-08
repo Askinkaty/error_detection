@@ -1,0 +1,214 @@
+{
+  "train": {
+    "input_file": {
+      "optional": false,
+      "ap_opts": {
+        "metavar": "INPUT_FILE",
+        "help": "Paths to the file which contains the training set."
+      }
+    },
+    "evaluate": {
+      "optional": true,
+      "short": "e",
+      "ap_opts": {
+        "metavar": "EVAL_FILE",
+        "default": null,
+        "help": "Validate the model on validation dataset. (default: None)."
+      }
+    },
+    "test_file": {
+      "optional": true,
+      "short": "t",
+      "ap_opts": {
+        "metavar": "TEST_FILE",
+        "default": null,
+        "help": "Path to the file with test data."
+      }
+    },
+    "pretrained": {
+      "optional": true,
+      "short": "p",
+      "ap_opts": {
+        "metavar": "EMB_FILE",
+        "default": null,
+        "help": "Load pretrained embeddings from a Numpy file (default: None)."
+      }
+    },
+    "batch_size": {
+      "optional": true,
+      "short": "b",
+      "ap_opts": {
+        "metavar": "B",
+        "default": 128,
+        "help": "Batch size (default: 128)."
+      }
+    },
+    "embed_dim": {
+      "optional": true,
+      "short": "d",
+      "ap_opts": {
+        "metavar": "D",
+        "default": 300,
+        "help": "Dimensionality of the embeddings (default: 300)."
+      }
+    },
+    "lstm_size": {
+      "optional": true,
+      "short": "s",
+      "ap_opts": {
+        "metavar": "H",
+        "default": 512,
+        "help": "Size of the LSTM hidden state (default: 512)."
+      }
+    },
+    "lstm_layers": {
+      "optional": true,
+      "short": "z",
+      "ap_opts": {
+        "metavar": "L",
+        "default": 1,
+        "help": "Number of stacked LSTM layers (default: 1)."
+      }
+    },
+    "epochs": {
+      "optional": true,
+      "short": "n",
+      "ap_opts": {
+        "metavar": "N",
+        "default": 1,
+        "help": "Train for this many epochs (default: 20)."
+      }
+    },
+    "window_radius": {
+      "optional": true,
+      "short": "w",
+      "ap_opts": {
+        "metavar": "R",
+        "default": 10,
+        "help": "Radius of the context window (default: 5)."
+      }
+    },
+    "l2_lambda": {
+      "optional": true,
+      "short": "l",
+      "ap_opts": {
+        "metavar": "L",
+        "default": 0.0,
+        "help": "Value of lambda for L2 regularization (default: 0)."
+      }
+    },
+    "dropout": {
+      "optional": true,
+      "short": "r",
+      "ap_opts": {
+        "metavar": "P",
+        "default": 0.2,
+        "help": "Dropout rate, i.e. probability of dropping a channel (default: 0)."
+      }
+    },
+    "attention_size": {
+      "optional": true,
+      "short": "at",
+      "ap_opts": {
+        "metavar": "At",
+        "default": 50,
+        "help": "Attention layer size. Default: 50"
+      }
+    },
+    "force_cpu": {
+      "optional": true,
+      "short": "c",
+      "ap_opts": {
+        "action": "store_true",
+        "help": "Force the training to run on CPU (default: False)."
+      }
+    }
+  },
+  "resume": {
+    "run_path": {
+      "optional": false,
+      "ap_opts": {
+        "metavar": "PATH",
+        "help": "Path to a previous run."
+      }
+    }
+  },
+  "test": {
+    "run_path": {
+      "optional": false,
+      "ap_opts": {
+        "metavar": "PATH",
+        "help": "Path to the run."
+      }
+    },
+    "checkpoint": {
+      "optional": true,
+      "short": "c",
+      "ap_opts": {
+        "metavar": "FILE",
+        "default": null,
+        "help": "Specific checkpoint to serve (default: latest)."
+      }
+    },
+    "test_file": {
+      "optional": false,
+      "short": "i",
+      "ap_opts": {
+        "metavar": "TEST_FILE",
+        "help": "Path to the file which contains the set to test on"
+      }
+    }
+  },
+  "infer": {
+    "run_path": {
+      "optional": false,
+      "ap_opts": {
+        "metavar": "PATH",
+        "help": "Path to the run."
+      }
+    },
+    "checkpoint": {
+      "optional": true,
+      "short": "c",
+      "ap_opts": {
+        "metavar": "FILE",
+        "default": null,
+        "help": "Specific checkpoint to serve (default: latest)."
+      }
+    },
+    "test_file": {
+      "optional": false,
+      "short": "i",
+      "ap_opts": {
+        "metavar": "INPUT_FILE",
+        "help": "Path to the file which contains the set to infer on"
+      }
+    }
+  },
+  "serve": {
+    "run_path": {
+      "optional": false,
+      "ap_opts": {
+        "metavar": "PATH",
+        "help": "Path to the run."
+      }
+    },
+    "port": {
+      "optional": true,
+      "short": "p",
+      "ap_opts": {
+        "metavar": "PORT",
+        "default": 5010,
+        "help": "Port to run the server on (default: 5010)."
+      }
+    },
+    "force_cpu": {
+      "optional": true,
+      "short": "c",
+      "ap_opts": {
+        "action": "store_true",
+        "help": "Force the server to run on CPU (default: False)."
+      }
+    }
+  }
+}
